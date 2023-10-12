@@ -1,14 +1,14 @@
-<h1><%= @user.username %></h1>
+<h1><%= @users.username %></h1>
 
 <dl>
   <dt>ID</dt>
-  <dd><%= @user.id %></dd>
+  <dd><%= @users.id %></dd>
 
   <dt>Edit user</dt>
   <dd>
-    <form action="/update_user/<%= @user.id %>" method="post">
+    <form action="/update_user/<%= @users.id %>" method="post">
       <label for="browser_username">Username</label>
-      <input id="browser_username" type="text" name="query_username" placeholder="Enter a username..." value="<%= @user.username %>">
+      <input id="browser_username" type="text" name="query_username" placeholder="Enter a username..." value="<%= @users.username %>">
 
       <button>Update user</button>
     </form>
@@ -36,7 +36,7 @@
     <th></th>
   </tr>
 
-  <% @user.commented_venues.each do |venue| %>
+  <% @users.commented_venues.each do |venue| %>
   <tr>
     <td>
       <%= venue.id %>
